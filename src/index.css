@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "CabinetGrotesk-Variable";
+  src: url("./assets/fonts/CabinetGrotesk-Variable.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GeneralSans-Variable";
+  src: url("./assets/fonts/GeneralSans-Variable.ttf") format("truetype");
+}
