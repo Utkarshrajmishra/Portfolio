@@ -3,6 +3,9 @@ export default {
   content: ['./src/**/*.{html,js,jsx}'],
   theme: {
     extend: {
+      screens: {
+        md2: '872px',
+      },
       colors: {
         transparent: 'transparent',
         'primary-200': '#F2F2F2',
@@ -20,7 +23,10 @@ export default {
         'accent-200': '#4D4D4D',
         'accent-100': '#666666',
       },
-      
+      fontFamily: {
+        general: ['GeneralSans-Variable', 'sans-serif'],
+        grotesk: ['CabinetGrotesk-Variable', 'sans-serif'],
+      },
     },
   },
   plugins: [],
