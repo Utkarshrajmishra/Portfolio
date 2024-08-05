@@ -27,6 +27,7 @@ export default {
         general: ['GeneralSans-Variable', 'sans-serif'],
         grotesk: ['CabinetGrotesk-Variable', 'sans-serif'],
       },
+      
     },
   },
   plugins: [],

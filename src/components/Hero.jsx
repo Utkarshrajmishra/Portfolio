@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import HeroImage from '../assets/images/heroimg.webp';
+import HeroImage from '../assets/images/img.jpg';
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -25,13 +25,10 @@ const Hero = () => {
 
   return (
     <section
-      className="flex  flex-col items-center h-screen gap-3 justify-center"
+      className="flex  flex-col items-center h-[80vh] gap-3 justify-center"
       ref={heroRef}
     >
-      <div
-        className="relative flex items-center justify-center w-full max-w-5xl h-[70vh] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${HeroImage})` }}
-      >
+     
         <div className="absolute flex flex-col items-center gap-3 px-4 text-center">
           <h1
             className="uppercase font-general font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-accent-400"
@@ -52,7 +49,7 @@ const Hero = () => {
             Hey, I'M Utkarsh
           </h1>
         </div>
-      </div>
+      
     </section>
   );
 };
