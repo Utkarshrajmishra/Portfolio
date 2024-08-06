@@ -31,7 +31,7 @@ useEffect(() => {
         y:-30, opacity:0,
     },
     {
-        y:0, opacity:1, duration:1, stagger:1, ease:'power3.in'
+        y:0, opacity:1, duration:1, stagger:0.3, ease:'power3.in'
     }
   )
 
