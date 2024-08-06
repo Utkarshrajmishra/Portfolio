@@ -1,24 +1,45 @@
-import React, { useState } from 'react';
-import { NavLinks } from '../constants/NavLinks';
+import React, { useEffect, useRef, useState } from 'react';
+import { NavLinks } from '../constants/NavLinks'; // Ensure you have a link for the resume in NavLinks
 import { Transition } from '@headlessui/react';
+import { gsap } from 'gsap';
+import { NavLink } from 'react-router-dom';
 
-const NavBar = ({ navRef }) => {
+const NavBar = React.forwardRef((props, ref) => {
+  const navRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const navElement = navRef.current;
+
+    if (navElement) {
+      gsap.fromTo(
+        navElement,
+        { y: -30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, stagger: 0.3, ease: 'power3.in' }
+      );
+    }
+  }, []); // Empty dependency array ensures this runs once
+
   return (
     <section
-      ref={navRef}
-      className="flex flex-col md:flex-row md:px-24  px-4  items-center py-8 justify-between"
+      ref={(el) => {
+        navRef.current = el;
+        if (ref) ref(el); // Forward ref to parent if provided
+      }}
+      className="flex flex-col md:flex-row md:px-24 px-4 items-center py-8 justify-between"
     >
       {/* Logo and Hamburger Button Container */}
       <div className="flex items-center w-full md:w-auto justify-between">
-        <h5 className="font-grotesk font-black text-3xl text-accent-400">
+        <NavLink
+          to="/"
+          className="font-grotesk font-black text-3xl text-accent-400"
+        >
           utkarsh
-        </h5>
+        </NavLink>
 
         <div className="md:hidden">
           <button
@@ -54,11 +75,18 @@ const NavBar = ({ navRef }) => {
                 : 'text-accent-400'
             }`}
           >
-            <a href="#" className="relative z-10">
+            <NavLink
+              to={items.link}
+              className={({ isActive }) =>
+                `relative z-10 ${isActive ? 'text-accent-400' : ''}`
+              }
+            >
               {items.title}
-            </a>
+            </NavLink>
           </li>
         ))}
+        {/* Add Resume Download Button */}
+        
       </ul>
 
       {/* Mobile Navigation Menu */}
@@ -82,16 +110,23 @@ const NavBar = ({ navRef }) => {
                     : 'text-accent-400 text-center'
                 }`}
               >
-                <a href="#" className="relative z-10">
+                <NavLink
+                  to={items.link}
+                  className={({ isActive }) =>
+                    `relative z-10 ${isActive ? 'text-accent-400' : ''}`
+                  }
+                >
                   {items.title}
-                </a>
+                </NavLink>
               </li>
             ))}
+            
+          
           </ul>
         </div>
       </Transition>
     </section>
   );
-};
+});
 
 export default NavBar;

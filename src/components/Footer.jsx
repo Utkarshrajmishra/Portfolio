@@ -1,3 +1,5 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
@@ -5,9 +7,12 @@ const Footer = () => {
     <section className="flex flex-col md:flex-row md:px-24 px-4 py-16 items-start justify-between">
       {/* Name Section */}
       <div className="flex items-center md:items-start mb-8 md:mb-0 w-full md:w-auto">
-        <h5 className="font-grotesk font-black text-3xl text-accent-400">
+        <NavLink
+          to="/"
+          className="font-grotesk font-black text-3xl text-accent-400"
+        >
           utkarsh
-        </h5>
+        </NavLink>
       </div>
 
       {/* Contact and Navigation Sections */}
@@ -31,24 +36,31 @@ const Footer = () => {
           <p className="text-lg font-bold mb-2">Navigation</p>
           <ul className="space-y-2">
             <li>
-              <a href="#home" className="text-sm hover:underline">
+              <NavLink
+                to="/"
+                className="text-sm hover:underline"
+                activeClassName="text-accent-400"
+              >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#blog" className="text-sm hover:underline">
-                Blog
-              </a>
+              <NavLink
+                to="/about"
+                className="text-sm hover:underline"
+                activeClassName="text-accent-400"
+              >
+                About
+              </NavLink>
             </li>
             <li>
-              <a href="#dashboard" className="text-sm hover:underline">
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#projects" className="text-sm hover:underline">
+              <NavLink
+                to="/projects"
+                className="text-sm hover:underline"
+                activeClassName="text-accent-400"
+              >
                 Projects
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -59,42 +71,32 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/Utkarshrajmishra"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm hover:underline"
+                className="text-sm hover:underline flex items-center"
               >
-                GitHub
+                <FaGithub className="mr-2" /> GitHub
               </a>
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/utkarsh-raj-mishra-3b7018283/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm hover:underline"
+                className="text-sm hover:underline flex items-center"
               >
-                LinkedIn
+                <FaLinkedin className="mr-2" /> LinkedIn
               </a>
             </li>
             <li>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://www.instagram.com/utk_075/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm hover:underline"
+                className="text-sm hover:underline flex items-center"
               >
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm hover:underline"
-              >
-                Instagram
+                <FaInstagram className="mr-2" /> Instagram
               </a>
             </li>
           </ul>

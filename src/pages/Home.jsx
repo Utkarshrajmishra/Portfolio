@@ -14,13 +14,13 @@ gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const heroRef = useRef(null);
   const textRefs = useRef([]);
-  const navRef = useRef(null);
+  
 
 
   useEffect(() => {
     const heroElement = heroRef.current;
     const textElements = textRefs.current;
-    const navElement = navRef.current;
+   
  
     gsap.fromTo(
       heroElement,
@@ -34,11 +34,7 @@ const Home = () => {
       { y: 0, opacity: 1, stagger: 0.2, duration: 2, ease: 'power3.out' }
     );
 
-    gsap.fromTo(
-      navElement,
-      { y: -30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, stagger: 0.3, ease: 'power3.in' }
-    );
+   
 
   
   }, []);
@@ -46,13 +42,13 @@ const Home = () => {
   return (
     <>
       <div>
-        <NavBar navRef={navRef} />
+      
         <Hero heroRef={heroRef} textRefs={textRefs} />
         <MarqueeComp />
         <About/>
         <Skill/>
         <Project/>
-        <Footer/>
+       
       </div>
     </>
   );
