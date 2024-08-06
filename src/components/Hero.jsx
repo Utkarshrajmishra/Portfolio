@@ -5,6 +5,7 @@ import HeroImage from '../assets/images/img.jpg';
 const Hero = () => {
   const heroRef = useRef(null);
   const textRefs = useRef([]);
+  
 
   useEffect(() => {
     const heroElement = heroRef.current;
@@ -25,7 +26,7 @@ const Hero = () => {
 
   return (
     <section
-      className="flex  flex-col items-center h-[80vh] gap-3 justify-center"
+      className="flex  flex-col items-center h-[90vh] gap-3 justify-center"
       ref={heroRef}
     >
      

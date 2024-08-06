@@ -16,7 +16,7 @@ const NavBar = () => {
                 : 'text-accent-400'
             }`}
           >
-            <span className="relative z-10">{items.title}</span>
+            <a href='#' className="relative z-10">{items.title}</a>
             
           </li>
         ))}
