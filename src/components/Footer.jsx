@@ -4,9 +4,9 @@ import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <section className="flex flex-col md:flex-row md:px-24 px-4 py-16 items-start justify-between">
+    <section className="flex flex-col md:flex-row md:px-24 px-4 py-16 items-center md:items-start justify-between">
       {/* Name Section */}
-      <div className="flex items-center md:items-start mb-8 md:mb-0 w-full md:w-auto">
+      <div className="flex items-center justify-center mb-8 md:mb-0 w-full md:w-auto">
         <NavLink
           to="/"
           className="font-grotesk font-black text-3xl text-accent-400"
@@ -16,7 +16,7 @@ const Footer = () => {
       </div>
 
       {/* Contact and Navigation Sections */}
-      <div className="flex flex-col md:flex-row w-full md:w-auto gap-14 items-start">
+      <div className="flex flex-col md:flex-row w-full md:w-auto gap-14 items-center md:items-start">
         {/* Contact Details */}
         <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left mb-8 md:mb-0">
           <p className="text-lg font-bold mb-2">Contact Detail</p>
