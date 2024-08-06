@@ -1,8 +1,8 @@
 import { NavLinks } from '../constants/NavLinks';
 
-const NavBar = () => {
+const NavBar = ({navRef}) => {
   return (
-    <section className="flex md:px-16 px-4 items-center py-5 justify-between">
+    <section ref={navRef} className="flex md:px-16 px-4 items-center py-5 justify-between">
       <h5 className="font-grotesk font-black text-3xl text-accent-400">
         utkarsh
       </h5>

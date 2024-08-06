@@ -1,7 +1,5 @@
 import './App.css';
-import MarqueeComp from './components/Marquee';
-import NavBar from './components/NavBar';
-import Hero from './components/Hero';
+import Home from './pages/Home';
 import AnimatedCursor from 'react-animated-cursor';
 function App() {
   return (
@@ -24,11 +22,7 @@ function App() {
           '.link',
         ]}
       />
-      <div>
-        <NavBar />
-        <Hero />
-        <MarqueeComp />
-      </div>
+     <Home/>
     </>
   );
 }

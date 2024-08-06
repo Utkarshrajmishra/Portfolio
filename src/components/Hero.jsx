@@ -1,28 +1,9 @@
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import HeroImage from '../assets/images/img.jpg';
 
-const Hero = () => {
-  const heroRef = useRef(null);
-  const textRefs = useRef([]);
-  
 
-  useEffect(() => {
-    const heroElement = heroRef.current;
-    const textElements = textRefs.current;
 
-    gsap.fromTo(
-      heroElement,
-      { opacity: 0, scale: 7 },
-      { opacity: 1, scale: 1, duration: 2, ease: 'power3.out' }
-    );
-
-    gsap.fromTo(
-      textElements,
-      { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.2, duration: 2, ease: 'power3.out' }
-    );
-  }, []);
+const Hero = ({heroRef, textRefs}) => {
+ 
 
   return (
     <section
