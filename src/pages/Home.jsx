@@ -3,6 +3,8 @@ import NavBar from '../components/NavBar';
 import Hero from '../components/Hero';
 import Skill from '../components/Skill';
 import About from '../components/About';
+import Project from '../components/Projects';
+import Footer from "../components/Footer"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
@@ -49,6 +51,8 @@ const Home = () => {
         <MarqueeComp />
         <About/>
         <Skill/>
+        <Project/>
+        <Footer/>
       </div>
     </>
   );

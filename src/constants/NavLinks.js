@@ -16,7 +16,7 @@ export const NavLinks = [
   },
   {
     id: '4',
-    title: "Let's Talk",
+    title: "Download Resume",
     type: 'button',
   },
 
