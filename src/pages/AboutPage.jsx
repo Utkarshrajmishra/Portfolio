@@ -2,7 +2,7 @@ import About from "../components/About"
 
 const AboutPage=()=>{
     return(
-        <section >
+        <section className="h-[100vh] overflow-y-scroll">
             <About/>
         </section>
     )
